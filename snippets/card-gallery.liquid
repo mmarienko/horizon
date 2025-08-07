@@ -160,10 +160,18 @@
           {% assign loading = 'eager' %}
           {% assign sizes = image_sizes %}
         {% endif %}
-
+        
         {% assign attributes = '' %}
         {% capture slideshow_children %}
+          {% for variant in product.variants %}
+            {% if variant.featured_media and variant.featured_media.id == media.id %}
+              {% assign selected_variant_secondary_image = variant.metafields.custom.secondary_image %}
+              {% break %}
+            {% endif %}
+          {% endfor %}
+
           {%- render 'product-media', media: media, sizes: sizes, loading: loading, preview_image_only: true -%}
+          {%- render 'product-media', media: selected_variant_secondary_image.value, sizes: sizes, loading: loading, preview_image_only: true -%}
         {% endcapture %}
         {% capture class %}
           product-media-container media-fit product-media-container--{{ media.media_type }}{% if constrain_to_viewport %} constrain-height{% endif %}
