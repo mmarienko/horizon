@@ -22,6 +22,8 @@
       id="view-transition-render-blocker"
     >
 
+    {{ 'tailwind.css' | asset_url | stylesheet_tag: preload: true }}
+
     {%- render 'meta-tags' -%}
     {%- render 'fonts' -%}
     {%- render 'scripts' -%}
