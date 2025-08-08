@@ -12,6 +12,7 @@
 {%- liquid
   assign selected_product = closest.product
   assign selected_variant_media = selected_product.selected_or_first_available_variant.featured_media
+  assign selected_variant_secondary_image = selected_product.selected_or_first_available_variant.metafields.custom.secondary_image
   assign first_3d_model = selected_product.media | where: 'media_type', 'model' | first
 
   if block_settings.hide_variants
@@ -305,9 +306,19 @@
         {% if block_settings.aspect_ratio != 'adapt' and block_settings.constrain_to_viewport %}
           <div class="product-media-constraint-wrapper">
             {%- render 'product-media', media: media, sizes: media_sizes, is_main_product_media: forloop.first -%}
+            {%- render 'product-media',
+              media: selected_variant_secondary_image.value,
+              sizes: media_sizes,
+              is_main_product_media: forloop.first
+            -%}
           </div>
         {% else %}
           {%- render 'product-media', media: media, sizes: media_sizes, is_main_product_media: forloop.first -%}
+          {%- render 'product-media',
+            media: selected_variant_secondary_image.value,
+            sizes: media_sizes,
+            is_main_product_media: forloop.first
+          -%}
         {% endif %}
       {% endcapture %}
       {% capture class %}
@@ -411,9 +422,19 @@
           {% if block_settings.aspect_ratio != 'adapt' and block_settings.constrain_to_viewport %}
             <div class="product-media-constraint-wrapper">
               {%- render 'product-media', media: media, sizes: media_sizes, is_main_product_media: forloop.first -%}
+              {%- render 'product-media',
+                media: selected_variant_secondary_image.value,
+                sizes: media_sizes,
+                is_main_product_media: forloop.first
+              -%}
             </div>
           {% else %}
             {%- render 'product-media', media: media, sizes: media_sizes, is_main_product_media: forloop.first -%}
+            {%- render 'product-media',
+              media: selected_variant_secondary_image.value,
+              sizes: media_sizes,
+              is_main_product_media: forloop.first
+            -%}
           {% endif %}
         </li>
       {% endfor %}
@@ -682,6 +703,24 @@
   .dialog-zoomed-gallery .product-media-container--model .product-media__image {
     /* Make the height match the height of the model-viewer */
     height: 100vh;
+  }
+
+  .product-media-container .product-media:nth-of-type(2) {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+  }
+
+  .product-media-container .product-media:nth-of-type(2) img {
+    object-fit: contain;
+  }
+
+  .product-media-container:hover .product-media:nth-of-type(1) {
+    opacity: 0;
+  }
+
+  .product-media-container:hover .product-media:nth-of-type(2) {
+    opacity: 1;
   }
 {% endstylesheet %}
 

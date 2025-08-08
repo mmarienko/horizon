@@ -67,4 +67,6 @@
       {% render 'quick-add-modal' %}
     {% endif %}
   </body>
+
+  {{ 'tailwind.css' | asset_url | stylesheet_tag: preload: true }}
 </html>
