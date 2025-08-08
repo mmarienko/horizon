@@ -7,7 +7,7 @@
 {% elsif closest.product != blank %}
   {% assign product_title = '<p>' | append: closest.product.title | append: '</p>' %}
   <a
-    class="contents user-select-text"
+    class="contents user-select-text tw-font-medium"
     ref="productTitleLink"
     href="{% render 'product-card-variant-url', product: closest.product %}"
     aria-hidden="true"
@@ -305,7 +305,7 @@
     {
       "type": "select",
       "id": "color",
-      "label": "t:settings.color",
+      "label": "t:settings.color",      
       "options": [
         {
           "value": "var(--color-foreground)",
@@ -318,6 +318,10 @@
         {
           "value": "var(--color-primary)",
           "label": "t:options.link"
+        },
+        {
+          "value": "var(--color-heading)",
+          "label": "t:options.custom"
         }
       ],
       "default": "var(--color-foreground)",

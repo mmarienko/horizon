@@ -6,8 +6,13 @@ module.exports = {
     preflight: false,
   },
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'body': '#111111',
+        'sale': '#FF0000',
+        'heading': '#0A4874',
+      },
+    },
   },
   plugins: [],
 }
-

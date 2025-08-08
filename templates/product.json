@@ -130,10 +130,35 @@
                   },
                   "blocks": {}
                 },
+                "product_vendor": {
+                  "type": "product-vendor",
+                  "name": "t:names.product_vendor",
+                  "settings": {
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "custom",
+                    "font": "var(--font-body--family)",
+                    "font_size": "0.875rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-body)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 6,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                },
                 "price_tVjtKg": {
                   "type": "price",
                   "settings": {
-                    "show_sale_price_first": true,
+                    "show_sale_price_first": false,
                     "show_installments": false,
                     "show_tax_info": false,
                     "type_preset": "paragraph",
@@ -155,20 +180,9 @@
               },
               "block_order": [
                 "text_xrnftG",
+                "product_vendor",
                 "price_tVjtKg"
               ]
-            },
-            "divider_VJhene": {
-              "type": "_divider",
-              "name": "t:names.divider",
-              "settings": {
-                "thickness": 1,
-                "corner_radius": "square",
-                "width_percent": 100,
-                "padding-block-start": 0,
-                "padding-block-end": 0
-              },
-              "blocks": {}
             },
             "variant_picker_R3rGDr": {
               "type": "variant-picker",
@@ -246,7 +260,6 @@
           },
           "block_order": [
             "group_icgrde",
-            "divider_VJhene",
             "variant_picker_R3rGDr",
             "buy_buttons_eYQEYi",
             "text_aEtTtq"
@@ -320,7 +333,32 @@
                 "border_width": 1,
                 "border_opacity": 100,
                 "border_radius": 0,
-                "padding-block-start": 0,
+                "padding-block-start": 8,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "product_vendor": {
+              "type": "product-vendor",
+              "name": "t:names.product_vendor",
+              "settings": {
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "custom",
+                "font": "var(--font-body--family)",
+                "font_size": "0.875rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-body)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 6,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
@@ -334,18 +372,18 @@
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "left",
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
+                "type_preset": "custom",
+                "font": "var(--font-subheading--family)",
                 "font_size": "1rem",
-                "line_height": "normal",
+                "line_height": "tight",
                 "letter_spacing": "normal",
                 "case": "none",
                 "wrap": "pretty",
-                "color": "var(--color-foreground)",
+                "color": "var(--color-heading)",
                 "background": false,
                 "background_color": "#00000026",
                 "corner_radius": 0,
-                "padding-block-start": 4,
+                "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
@@ -355,18 +393,18 @@
             "price_gLWgA6": {
               "type": "price",
               "settings": {
-                "show_sale_price_first": true,
+                "show_sale_price_first": false,
                 "show_installments": false,
                 "show_tax_info": false,
-                "type_preset": "h6",
+                "type_preset": "custom",
                 "width": "100%",
                 "alignment": "left",
                 "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
+                "font_size": "0.875rem",
+                "line_height": "tight",
                 "letter_spacing": "normal",
                 "case": "none",
-                "color": "var(--color-foreground)",
+                "color": "var(--color-body)",
                 "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
@@ -377,6 +415,7 @@
           },
           "block_order": [
             "product_card_gallery_DNizbJ",
+            "product_vendor",
             "product_title_M7MJkb",
             "price_gLWgA6"
           ]
@@ -394,7 +433,7 @@
         "max_products": 4,
         "columns": 4,
         "mobile_columns": "2",
-        "columns_gap": 12,
+        "columns_gap": 30,
         "rows_gap": 24,
         "icons_style": "arrow",
         "icons_shape": "none",

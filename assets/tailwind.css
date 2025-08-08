@@ -106,6 +106,68 @@
   --tw-contain-style:  
 }
 
-.tw-hidden {
-  display: none
+.tw-m-3 {
+  margin: 0.75rem
+}
+
+.tw-rounded-\[10px\] {
+  border-radius: 10px
+}
+
+.tw-rounded-\[25px\] {
+  border-radius: 25px
+}
+
+.tw-border {
+  border-width: 1px
+}
+
+.tw-border-solid {
+  border-style: solid
+}
+
+.tw-border-\[var\(--color-border\)\] {
+  border-color: var(--color-border)
+}
+
+.tw-border-sale {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 0 0 / var(--tw-border-opacity, 1))
+}
+
+.tw-px-1 {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem
+}
+
+.tw-px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem
+}
+
+.tw-py-\[6px\] {
+  padding-top: 6px;
+  padding-bottom: 6px
+}
+
+.tw-text-base {
+  font-size: 1rem;
+  line-height: 1.5rem
+}
+
+.tw-font-medium {
+  font-weight: 500
+}
+
+.tw-leading-none {
+  line-height: 1
+}
+
+.tw-text-sale {
+  --tw-text-opacity: 1;
+  color: rgb(255 0 0 / var(--tw-text-opacity, 1))
+}
+
+.tw-opacity-100 {
+  opacity: 1
 }
